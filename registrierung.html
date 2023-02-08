@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--pico.css: setzt automatisch dark oder light Theme je nach Browsereinstellung-->
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+        <link rel="stylesheet" href="style.css">
+
+        <!--This gives the browser instructions on how to control the page's dimensions and scaling.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Murnauer Kleiderspenden-Verein</title>
+        <link rel="icon" href="favicon.png">
+    </head>
+
+    <body>
+        <header class="header">
+            <nav>
+                <ul>
+                    <a class="logo" href="index.html"><img src="Logo.png"></a>
+                </ul>
+                <ul>
+                    <li><a href="https://de-de.facebook.com/">Facebook</a></li>
+                    <li><a href="https://twitter.com/?lang=de">Twitter</a></li>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main class="container">
+            <hgroup>
+                <h4 class="heading">Kleiderspende registrieren</h4>
+                <p class="heading">Wählen sie aus, ob sie ihre Kleiderspende von einem Sammelfahrzeug abholen lassen, <br> oder vor Ort in der Geschäftsstelle übergeben wollen.</p>
+            </hgroup>
+            <div class="grid">
+                <button class="outline" onclick="buttonAbholung()">Abholung durch Sammelfahrzeug</button>
+                <button class="outline" onclick="buttonUebergabe()">Übergabe an der Geschäftsstelle</button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Impressum</a></li>
+                    <li><a href= "#">Datenschutz</a></li>
+                </ul>
+            </nav>
+        </footer>
+        
+        <script>
+            function buttonUebergabe() {
+                window.location.href = "uebergabe.html";
+            }
+            function buttonAbholung() {
+                window.location.href = "abholung.html";
+            }
+        </script>
+    </body>
+</html>

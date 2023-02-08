@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--pico.css: setzt automatisch dark oder light Theme je nach Browsereinstellung-->
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+        <link rel="stylesheet" href="style.css">
+
+        <!--This gives the browser instructions on how to control the page's dimensions and scaling.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Murnauer Kleiderspenden-Verein</title>
+        <link rel="icon" href="favicon.png">
+    </head>
+
+    <body>
+        <header class="header">
+            <nav>
+                <ul>
+                    <a class="logo" href="index.html"><img src="Logo.png"></a>
+                </ul>
+                <ul>
+                    <li><a href="https://de-de.facebook.com/">Facebook</a></li>
+                    <li><a href="https://twitter.com/?lang=de">Twitter</a></li>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="container">
+            <hgroup>
+                <h4 class="heading">Übergabe an der Geschäftsstelle</h4>
+                <p class="heading">Dies ist nur an der Geschäftsstelle auszufüllen (ein Tablet steht zur Verfügung)</p>
+            </hgroup>
+
+            <article>
+                <form>
+                    <section>
+                        <label for="Kleidung">Art und Anzahl der Kleidung angeben *</label>
+                        <textarea name="Art der Kleidung" id="Kleidung" rows="4" placeholder="Kleidung angeben" required></textarea>
+                    </section>
+
+                    <section>
+                        <label for="Krisengebiet">Aktuelles Kriesengebiet auswählen *</label>
+                        <select name="Krisengebiet" id="Krisengebiet" required>
+                            <option value="" selected>Kriesengebiet auswählen...</option>
+                            <option>Ukraine</option>
+                            <option>Haiti</option>
+                            <option>Burkina Faso</option>
+                            <option>Südsudan</option>
+                            <option>Syrien</option>
+                            <option>Jemen</option>
+                            <option>Demokratische Republik Kongo</option>
+                            <option>Afghanistan</option>
+                            <option>Äthiopien</option>
+                            <option>Somalia</option>
+                        </select>
+                        <small>* Pflichtfelder</small>
+                    </section>
+                    
+                    <div class="grid">
+                        <div></div>
+                        <button type="submit">Registrierung abschließen</button>
+                        <div></div>
+                    </div>
+                </form>
+            </article>
+        </main>
+
+        <footer class="footer">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Impressum</a></li>
+                    <li><a href= "#">Datenschutz</a></li>
+                </ul>
+            </nav>
+        </footer>
+
+        <script>
+            const form = document.querySelector("form");
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();
+                localStorage.clear();
+                const formdata = new FormData(form);
+                const formobj = Object.fromEntries(formdata);
+                const json = JSON.stringify(formobj);
+                localStorage.setItem("form", json);
+                window.location.href = "bestaetigung.html";
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--pico.css: setzt automatisch dark oder light Theme je nach Browsereinstellung-->
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+        <link rel="stylesheet" href="style.css">
+
+        <!--This gives the browser instructions on how to control the page's dimensions and scaling.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Murnauer Kleiderspenden-Verein</title>
+        <link rel="icon" href="favicon.png">
+    </head>
+
+    <body>
+        <header class="header">
+            <nav>
+                <ul>
+                    <a class="logo" href="index.html"><img src="Logo.png"></a>
+                </ul>
+                <ul>
+                    <li><a href="https://de-de.facebook.com/">Facebook</a></li>
+                    <li><a href="https://twitter.com/?lang=de">Twitter</a></li>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main class="container">
+            <hgroup>
+                <h4 class="heading">Abholung durch Sammelfahrzeug</h4>
+                <p class="heading">Dies ist nur in der Umgebung Murnaus möglich</p>
+            </hgroup>
+            <article>
+                <form>
+                    <section>
+                        <label for="Kleidung">Art und Anzahl der Kleidung angeben *</label>
+                        <textarea name="Art der Kleidung" id="Kleidung" rows="4" placeholder="Kleidung angeben" required></textarea>
+                    </section>
+
+                    <section>
+                        <label for="Krisengebiet">Aktuelles Kriesengebiet auswählen *</label>
+                        <select name="Kriesengebiet" id="Krisengebiet" required>
+                            <option value="" selected>Kriesengebiet auswählen...</option>
+                            <option>Ukraine</option>
+                            <option>Haiti</option>
+                            <option>Burkina Faso</option>
+                            <option>Südsudan</option>
+                            <option>Syrien</option>
+                            <option>Jemen</option>
+                            <option>Demokratische Republik Kongo</option>
+                            <option>Afghanistan</option>
+                            <option>Äthiopien</option>
+                            <option>Somalia</option>
+                        </select>
+                    </section>
+                
+                    <section>
+                        <label>Abholadresse eingeben</label>
+                        <div class="grid">
+                            <label for="Vorname">Vorname *
+                                <input type= "text" name="Vorname" id="Vorname" placeholder="Vorname" required>
+                            </label>
+                            <label for="Nachname">Nachname *
+                                <input type= "text" name="Nachname" id="Nachname" placeholder="Nachname" required>
+                            </label>
+                        </div>
+                        <div class="grid">
+                            <label for="Straße">Straße *
+                                <input type= "text" name="Straße" id="Straße" placeholder="Straße" required>
+                            </label>
+                            <label for="Hausnummer">Hausnummer *
+                                <input type= "text" name="Hausnummer" id="Hausnummer" placeholder="Hausnummer" required>
+                            </label>
+                        </div>
+                        <div class="grid">
+                            <label for="plz">PLZ *
+                                <input type= "text" oninput="validatePLZ()" name="PLZ" placeholder="PLZ" id="plz" pattern="[0-9]{5}" required>
+                            </label>
+                            <label for="Ort">Ort *
+                                <input type="text" name="Ort" id="Ort" placeholder="Ort" required>
+                            </label>
+                        </div>
+                        <div>
+                            <label for="E-Mail">E-Mail *</label>
+                            <input type="email" name="E-Mail" id="E-Mail" placeholder="E-Mail" required>
+                            <small>* Pflichtfelder</small>
+                        </div>
+                    </section>
+                    
+                    <div class="grid">
+                        <div></div>
+                        <button type="submit">Registrierung abschließen</button>
+                        <div></div>
+                    </div>
+                </form>
+            </article>
+        </main>
+        
+        <footer class="footer">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Impressum</a></li>
+                    <li><a href= "#">Datenschutz</a></li>
+                </ul>
+            </nav>
+        </footer>
+        
+        <script>
+            //plz prüfen: setzt während Eingabe aria-invalid + Tooltips
+            function validatePLZ (){
+                let plz = document.getElementById("plz");
+                let plzValue = document.getElementById("plz").value;
+                const regexp = /82[0-9]{3,3}$/;
+                if (regexp.test(plzValue)) {  //testet auf "82 + genau 3 weitere Ziffern"
+                    plz.setAttribute("aria-invalid", "false"); //aria-valid: grünes Häckchen
+                    plz.setAttribute("title", "Abholung ist möglich.");
+                }
+                else if (plzValue === "") {
+                    plz.removeAttribute("aria-invalid"); //kein aria bei löschen der Eingabe
+                    plz.setAttribute("title", "Bitte füllen sie dieses Feld aus."); 
+                }
+                else {
+                    plz.setAttribute("aria-invalid", "true"); //aria-invalid: rotes Ausrufezeichen
+                    plz.setAttribute("title", "Nicht in Murnaus Umgebung: Abholung ist nicht möglich.");
+                }
+            }    
+
+
+            //submit Button
+            const form = document.querySelector("form");
+            form.addEventListener("submit", function(event) {
+                event.preventDefault();                               //verhindert HTML-submit
+                localStorage.clear();
+                if (plz.getAttribute("aria-invalid") == "false") {    //verhindert submit bei falscher PLZ
+                    const formdata = new FormData(form);              //FormData Objekt mit allen Nutzereingaben
+                    const formobj = Object.fromEntries(formdata);     //iterative Methode: erzeugt Array aus Objekt
+                    const json = JSON.stringify(formobj);             //zu json konvertieren
+                    localStorage.setItem("form", json);               //in localStorage speichern
+                    window.location.href = "bestaetigung.html";
+                }              
+            })
+        </script>
+    </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--pico.css: setzt automatisch dark oder light Theme je nach Browsereinstellung-->
+        <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+        <link rel="stylesheet" href="style.css">
+
+        <!--This gives the browser instructions on how to control the page's dimensions and scaling.-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Murnauer Kleiderspenden-Verein</title>
+        <link rel="icon" href="favicon.png">
+    </head>
+
+    <body>
+        <header class="header">
+            <nav>
+                <ul>
+                    <a class="logo" href="index.html"><img src="Logo.png"></a>
+                </ul>
+                <ul>
+                    <li><a href="https://de-de.facebook.com/">Facebook</a></li>
+                    <li><a href="https://twitter.com/?lang=de">Twitter</a></li>
+                    <li><a href="https://www.instagram.com/">Instagram</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="container"> <!--centered viewport, Seitenabstände dynamisch je nach Bildschirmgröße-->
+            <section>
+                <h2 class="heading">Herzlich Willkommen<br>beim Murnauer Kleiderspenden-Verein</h2>
+                <p>
+                    Bei uns können sie ihre Kleiderspende registrieren und dabei sogar entscheiden, in welche aktuelle Krisensituation sie gebracht werden soll.
+                    <br>
+                    Ihre Kleiderspende können sie direkt an der Geschäftsstelle abgeben oder von einem Sammelfahrzeug abholen lassen (dies ist nur in der Umgebung Murnaus möglich).
+                </p>
+            </section>
+
+            <section>
+                <h5 class="heading">Informationen über aktuelle Krisengebiete</h5>
+                <details>
+                    <summary>Ukraine</summary>
+                    <p>Der Ukrainekrieg hat nach Angaben von UNHCR die weltweit schnellste und größte Vertreibungskrise seit Jahrzehnten ausgelöst. Der Konflikt wird wahrscheinlich bis ins Jahr 2023 andauern. Für Ukrainer*innen besteht ein erhöhtes Risiko für Verletzungen, Krankheiten und Tod. Durch russische Raketenangriffe könnten Millionen Menschen im Winter ohne Wasser, Strom und Heizung sein. Mehr als 6,5 Millionen Ukrainer*innen sind innerhalb des Landes vertrieben. 7,8 Millionen weitere Menschen sind in andere europäische Länder geflüchtet.
+                    </p>
+                </details>
+                <details>
+                    <summary>Haiti</summary>
+                    <p>Bewaffnete Banden übernehmen regelmäßig die Kontrolle über die Verteilungswege. Das führt zu Engpässen bei der Versorgung mit Grundstoffen und Treibstoff. Die steigenden Lebensmittelpreise machen es für die Menschen immer schwieriger, Lebensmittel zu kaufen.
+                    </p>
+                </details>
+                <details>
+                    <summary>Burkina Faso</summary>
+                    <p>Die Lage in Burkina Faso wird immer schlimmer: Nichtstaatliche bewaffnete Gruppen verstärken ihre Angriffe und übernehmen immer weiter die Kontrolle. Die Spannungen zwischen den politischen Gruppierungen des Landes verursachen Instabilität. Allein im Jahr 2022 haben Mitglieder*innen der Streitkräfte zweimal die Macht übernommen.
+                    </p>
+                </details>
+                <details>
+                    <summary>Südsudan</summary>
+                    <p>Südsudan erholt sich noch von einem Bürgerkrieg, der im Jahr 2018 endete. Der Konflikt hat zwar abgenommen, aber die Kämpfe sind nach wie vor weit verbreitet. Das Land ist eines der fragilsten der Welt. Klimakatastrophen wie schwere Überschwemmungen und Dürren erschweren den Menschen zunehmend den Zugang zu Lebensmitteln und lebenswichtigen Ressourcen.
+                    </p>
+                </details>
+                <details>
+                    <summary>Syrien</summary>
+                    <p>Mehr als ein Jahrzehnt Krieg hat das syrische Gesundheitssystem zerstört und das Land an den Rand des wirtschaftlichen Zusammenbruchs gebracht. Langjährige Konflikte im benachbarten Libanon haben zu einem weiteren Anstieg der Lebensmittelpreise und der Armut geführt. Derzeit sind 75 Prozent der Syrer*innen nicht in der Lage, ihre Grundbedürfnisse zu decken. Millionen von Menschen sind auf humanitäre Hilfe angewiesen.
+                    </p>
+                </details>
+                <details>
+                    <summary>Jemen</summary>
+                    <p>Die Krise im Jemen verschärft sich und der seit acht Jahren andauernde Konflikt zwischen bewaffneten Gruppen und Regierungstruppen bleibt ungelöst. Ein Waffenstillstand dämmte die Kämpfe für einige Monate ein. Er brach aber im Oktober 2022 zusammen und konnte die wirtschaftlichen und gesundheitlichen Folgen des Konflikts nicht abmildern.
+                    </p>
+                </details>
+                <details>
+                    <summary>Demokratische Republik Kongo</summary>
+                    <p>Mehr als 100 bewaffnete Gruppen kämpfen im Ostkongo um die Kontrolle und schüren damit eine seit Jahrzehnten andauernde Krise. Die Bevölkerung wird häufig zur Zielscheibe. Nach fast zehn Jahren der Ruhe startete die bewaffnete Gruppe M23 im Jahr 2022 eine neue Offensive, die Familien zur Flucht zwingt und die humanitäre Hilfe unterbricht. Große Krankheitsausbrüche - darunter Masern, Malaria und Ebola - bedrohen weiterhin das ohnehin schwache Gesundheitssystem und gefährden viele Menschenleben.
+                    </p>
+                </details>
+                <details>
+                    <summary>Afghanistan</summary>
+                    <p>Mehr als ein Jahr nach der Machtübernahme durch die Taliban befinden sich die Afghan*innen nach wie vor im wirtschaftlichen Kollaps. Zwar konnte durch eine rasche Aufstockung der Hilfe eine Hungersnot im letzten Winter verhindert werden. Doch die eigentliche Ursache der Krise bleibt bestehen.
+                    </p>
+                </details>
+                <details>
+                    <summary>Äthiopien</summary>
+                    <p>Äthiopien steuert auf die sechste ausgefallene Regenzeit in Folge zu. Dadurch könnte sich die Dürre, von der bereits 24 Millionen Menschen betroffen sind, verlängern. Gleichzeitig bringen verschiedene Konflikte im ganzen Land das Leben der Menschen durcheinander und hindern humanitäre Organisationen daran, Hilfe zu leisten.
+                    </p>
+                </details>
+                <details>
+                    <summary>Somalia</summary>
+                    <p>Somalia ist von einer beispiellosen Dürre- und Hungerkrise betroffen. Tausende von Menschen sind bereits dem Hunger zum Opfer gefallen, und das Land steht am Rande einer Hungersnot. Dies ist keine "Naturkatastrophe". Der von Menschen verursachte Klimawandel hat die Häufigkeit und Schwere der Dürren erhöht. Jahrzehntelange Konflikte haben die Fähigkeit Somalias untergraben, auf Schocks jeglicher Art zu reagieren. Sie haben Systeme und Infrastrukturen zerstört, die einen Schutzwall gegen die aktuelle Krise geboten hätten. So hat sich beispielsweise die Abhängigkeit Somalias von Importen als katastrophal erwiesen: Die Nahrungsmittelproduktion des Landes wurde durch den Klimawandel und den Konflikt dezimiert. Über 90 Prozent des Weizens kommen aus Russland und der Ukraine.
+                    </p>
+                </details>
+                <small>Quelle: <a href="https://de.rescue.org/artikel/die-zehn-schlimmsten-humanitaeren-krisen-2023">Emergency Watchlist 2023</a></small>
+            </section>
+
+            <section>
+                <div class="grid">
+                    <div></div>
+                    <button class="outline" onclick="buttonRegistrierung()">Hier Kleiderspende registrieren</button>
+                    <div></div>
+                </div>
+            </section>
+            
+            <h5 class="heading">Über uns</h5>
+            <p>Wir sind ein lokaler, gemeinütziger Verein, der sich unter anderem der Logistik und Organisation von Kleiderspenden verschrieben hat.
+            </p>   
+        </main>
+
+        <footer class="footer">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Startseite</a></li>
+                </ul>
+                <ul>
+                    <li><a href="#">Impressum</a></li>
+                    <li><a href= "#">Datenschutz</a></li>
+                </ul>
+            </nav>
+        </footer>
+        
+        <script>
+            function buttonRegistrierung() {
+                window.location.href = "registrierung.html";
+            }
+        </script>
+    </body>
+</html>
